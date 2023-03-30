@@ -9,13 +9,21 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				// "mikestead.dotenv",
-				// "amiralizadeh9480.laravel-extra-intellisense",
-				// "ryannaddy.laravel-artisan",
-				// "onecentlin.laravel5-snippets",
-				// "onecentlin.laravel-blade"
+				"mikestead.dotenv",
+				"amiralizadeh9480.laravel-extra-intellisense",
+				"ryannaddy.laravel-artisan",
+				"onecentlin.laravel5-snippets",
+				"onecentlin.laravel-blade",
+				"open-southeners.laravel-pint",
+				"bmewburn.vscode-intelephense-client",
+				"mehedidracula.php-namespace-resolver",
+				"xdebug.php-debug",
+				"editorconfig.editorconfig"
 			],
-			"settings": {}
+			"settings": {
+				"laravel-pint.enable": true,
+				"editor.formatOnSave": true
+			}
 		}
 	},
 	"remoteUser": "sail",
