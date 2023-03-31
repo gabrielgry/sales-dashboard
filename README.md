@@ -5,7 +5,5 @@
 
 ## Configurar
 - `php artisan migrate`
-- `npm run build`
+- `npm run dev`
 - Acessar `localhost`
-
-## Comentários
