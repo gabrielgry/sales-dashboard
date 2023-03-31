@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Sale::class)->cascadeOnDelete();
             $table->date('due_date');
-            $table->unsignedInteger('value');
+            $table->unsignedFloat('value');
             $table->string('observations')->nullable();
             $table->timestamps();
         });

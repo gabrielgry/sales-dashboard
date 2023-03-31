@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Sale::class)->cascadeOnDelete();
             $table->string('product');
-            $table->unsignedInteger('price');
+            $table->unsignedFloat('price');
             $table->timestamps();
         });
     }

@@ -35,7 +35,7 @@ class SaleController extends Controller
         $sale->user_id = $request->user()->id;
         $sale->client = $validated['client'];
         $sale->payment_method = $validated['payment_method'];
-        $sale->total_price = $totalPrice;
+        $sale->total_price = (float) $totalPrice;
 
         $sale->save();
 
@@ -43,7 +43,7 @@ class SaleController extends Controller
             $sale->items()->create([
                 'sale_id' => $sale->id,
                 'product' => $item['product'],
-                'price' => $item['price'],
+                'price' => (float) $item['price'],
             ]);
         }
 
@@ -51,7 +51,7 @@ class SaleController extends Controller
             $sale->installments()->create([
                 'sale_id' => $sale->id,
                 'due_date' => $installment['date'],
-                'value' => $installment['value'],
+                'value' => (float) $installment['value'],
                 'observations' => $installment['observations']
             ]);
         }
@@ -70,7 +70,7 @@ class SaleController extends Controller
         $sale = Sale::find($id);
         $sale->client = $validated['client'];
         $sale->payment_method = $validated['payment_method'];
-        $sale->total_price = $totalPrice;
+        $sale->total_price = (float) $totalPrice;
         $sale->items()->delete();
         $sale->installments()->delete();
 
@@ -80,7 +80,7 @@ class SaleController extends Controller
             $sale->items()->create([
                 'sale_id' => $sale->id,
                 'product' => $item['product'],
-                'price' => $item['price'],
+                'price' => (float) $item['price'],
             ]);
         }
 
@@ -88,7 +88,7 @@ class SaleController extends Controller
             $sale->installments()->create([
                 'sale_id' => $sale->id,
                 'due_date' => $installment['date'],
-                'value' => $installment['value'],
+                'value' => (float) $installment['value'],
                 'observations' => $installment['observations']
             ]);
         }

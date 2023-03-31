@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignIdFor(User::class)->cascadeOnDelete();
             $table->string('client');
             $table->enum('payment_method', ['credit-card', 'debit-card', 'pix', 'boleto']);
-            $table->unsignedInteger('total_price');
+            $table->unsignedFloat('total_price');
             $table->timestamps();
         });
     }
